@@ -1,11 +1,13 @@
+import CollectionPage from "@/components/Collection";
 import BoxPage from "./boxes/page";
 import Products from "./products/page";
 
 export default function Home() {
   return (
-    <div >
-       <Products/>
-       <BoxPage/>
+    <div>
+      <Products />
+      <BoxPage />
+      <CollectionPage />
     </div>
   );
 }

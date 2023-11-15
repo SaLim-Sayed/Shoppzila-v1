@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import {
   Navbar,
@@ -11,36 +11,50 @@ import {
   NavbarMenuToggle,
   NavbarMenuItem,
 } from "@nextui-org/react";
-import   Logo   from "/public/Logo.png";
- 
+import Logo from "/public/Logo.png";
+
 import { navLinks } from "@/constants/navLinks";
 import Image from "next/image";
 
 export default function NavBar() {
-  const [selectedButton, setSelectedButton] = useState(0);
+  const [selectedButton, setSelectedButton] = useState(1);
 
-  const handleButtonClick = (id:number) => {
+  const handleButtonClick = (id: number) => {
     setSelectedButton(id);
   };
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <Navbar disableAnimation isBordered>
-      <NavbarContent className="sm:hidden" justify="start">
-        <NavbarMenuToggle />
+    <Navbar isBordered onMenuOpenChange={setIsMenuOpen}>
+      <NavbarContent>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden"
+        />
+
+        <NavbarBrand>
+          <Button  variant="light">
+            {" "}
+            <Image
+              src={Logo}
+              alt=""
+              className="relative p-2"
+              width={70}
+              height={70}
+              priority
+            />
+          </Button>
+        </NavbarBrand>
       </NavbarContent>
-
-      <NavbarBrand>
-        <Image src={Logo} alt="" className="p-2" width={70} height={70} />
-      </NavbarBrand>
-
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem className=" flex justify-center">
           {navLinks.map((item) => (
             <Button
               key={item.id}
               as={Link}
-              className={`bg-neutral-50/900  hover:bg-orange-300 font-light mx-2 ${
-                selectedButton === item.id ? "bg-warning" : ""
+              variant="light"
+              className={ ` hover:bg-orange-300 font-light mx-2 ${
+                selectedButton === item.id ? "text-warning" : ""
               }`}
               onClick={() => handleButtonClick(item.id)}
               href={item.url}
@@ -65,6 +79,7 @@ export default function NavBar() {
         </NavbarItem>
       </NavbarContent>
 
+   
       <NavbarMenu>
         {navLinks.map((item) => (
           <NavbarMenuItem key={item.id}>
