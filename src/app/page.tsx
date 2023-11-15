@@ -1,7 +1,11 @@
+import BoxPage from "./boxes/page";
+import Products from "./products/page";
+
 export default function Home() {
   return (
-    <div className=" container">
-      <h1>Next.js Carousel Example</h1>
+    <div >
+       <Products/>
+       <BoxPage/>
     </div>
   );
 }

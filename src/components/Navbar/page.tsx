@@ -1,6 +1,5 @@
-"use client";
+"use client"
 import React, { useState } from "react";
-
 import {
   Navbar,
   NavbarBrand,
@@ -18,6 +17,12 @@ import { navLinks } from "@/constants/navLinks";
 import Image from "next/image";
 
 export default function NavBar() {
+  const [selectedButton, setSelectedButton] = useState(0);
+
+  const handleButtonClick = (id:number) => {
+    setSelectedButton(id);
+  };
+
   return (
     <Navbar disableAnimation isBordered>
       <NavbarContent className="sm:hidden" justify="start">
@@ -32,12 +37,13 @@ export default function NavBar() {
         <NavbarItem className=" flex justify-center">
           {navLinks.map((item) => (
             <Button
-              data-pressed="warinig"
               key={item.id}
               as={Link}
-              className=" hover:bg-orange-300 bg-neutral-50 font-light mx-2"
-              color={item.id === 1 ? "warning" : "default"}
-              href="#"
+              className={`bg-neutral-50/900  hover:bg-orange-300 font-light mx-2 ${
+                selectedButton === item.id ? "bg-warning" : ""
+              }`}
+              onClick={() => handleButtonClick(item.id)}
+              href={item.url}
             >
               {item.title}
             </Button>
@@ -48,7 +54,7 @@ export default function NavBar() {
       <NavbarContent justify="end">
         <NavbarItem>
           <Button
-            data-pressed="warinig"
+            data-pressed="warning"
             as={Link}
             color="warning"
             href="#"

@@ -1,18 +1,14 @@
 "use client";
 
+import store from "@/api-redux/store";
 import { NextUIProvider } from "@nextui-org/react";
-import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { Provider } from "react-redux";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <NextUIProvider>
-      <NextThemesProvider
-        attribute="class"
-        defaultTheme="dark"
-        themes={["light", "dark", "modern"]}
-      >
-        {children}
-      </NextThemesProvider>
-    </NextUIProvider>
+    <Provider store={store}>
+      {" "}
+      <NextUIProvider>{children}</NextUIProvider>
+    </Provider>
   );
 }

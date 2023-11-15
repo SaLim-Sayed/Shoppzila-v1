@@ -14,6 +14,15 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      container: {
+        padding: {
+          DEFAULT: '1rem',
+        sm: '4rem',
+        lg: '5rem',
+        xl: '6rem',
+        '2xl': '6rem',
+        },
+      },
     },
   },
   darkMode: "class",
