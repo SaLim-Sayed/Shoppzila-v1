@@ -11,8 +11,8 @@ import {
   NavbarMenuToggle,
   NavbarMenuItem,
 } from "@nextui-org/react";
-import { Logo } from "./Logo";
-import { color } from "framer-motion";
+import   Logo   from "/public/Logo.png";
+ 
 import { navLinks } from "@/constants/navLinks";
 import Image from "next/image";
 
@@ -30,7 +30,7 @@ export default function NavBar() {
       </NavbarContent>
 
       <NavbarBrand>
-        <Image src="/Logo.png" alt="" className="p-2" width={70} height={70} />
+        <Image src={Logo} alt="" className="p-2" width={70} height={70} />
       </NavbarBrand>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
