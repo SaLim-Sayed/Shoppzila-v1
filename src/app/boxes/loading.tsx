@@ -4,7 +4,7 @@ import { CarProps } from "@/types";
 import fetchData from "@/utils";
 
 export default async function App() {
-  const url = "http://localhost:3000/api/boxes";
+  const url = "https://shoppzila.vercel.app/api/boxes";
   const allProducts: CarProps[] = await fetchData(url);
   return (
     <div>
