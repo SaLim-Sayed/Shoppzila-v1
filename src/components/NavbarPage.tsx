@@ -10,17 +10,15 @@ import {
   NavbarMenu,
   NavbarMenuToggle,
   NavbarMenuItem,
-  Badge,
-  Avatar,
+ 
 } from "@nextui-org/react";
-import Logo from "/public/Logo.png";
+ 
 
 import { navLinks } from "@/constants/navLinks";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
-import { IProduct } from "@/interfaces";
-import { ShoppingBasket } from "lucide-react";
+import { IProduct } from "@/interfaces"; 
 import ModalPage from "./ModalPage";
 
 export default function NavBar() {
@@ -48,7 +46,7 @@ export default function NavBar() {
         <NavbarBrand>
           <Button as={Link} href="/" variant="light">
             <Image
-              src={Logo}
+              src="/Logo.png"
               alt=""
               className="  p-2"
               width={70}
@@ -64,7 +62,7 @@ export default function NavBar() {
           <Button as={Link} href="/" variant="light">
             {" "}
             <Image
-              src={Logo}
+              src="/Logo.png"
               alt=""
               className="  p-2"
               width={70}
