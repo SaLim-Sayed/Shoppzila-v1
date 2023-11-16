@@ -2,12 +2,11 @@
 
 import { IBox } from "@/types";
 // import { Button } from "@nextui-org/button";
-import { ArrowBigRight, ArrowRight } from "lucide-react";
+import {  ArrowRight } from "lucide-react";
 import {
   Card,
   CardHeader,
-  CardBody,
-  CardFooter,
+  
   Image,
   Button,
 } from "@nextui-org/react";
@@ -44,26 +43,7 @@ const BoxCard = ({ box, idx }: ICardProps) => {
           </Button>
         </div>
       </Card>
-      {/* <div className=" w-full flex  flex-col items-start gap-2 top-2 left-2 z-20">
-        <h2 className=" leading-[26px] ">{title}</h2>
-        <p className="  mt-2 font-light text-xs  ">{slug}</p>
-      </div>
-
-      <div className="  object-contain w-full hover:w-72 h-36 my-3 rounded-xl">
-        <Image
-        isZoomed
-          src={src}
-          alt="car model"
-          fill
-          priority
-          className="   rounded-xl"
-        />
-      </div>
-      <div className="absolute flex justify-center  -bottom-5 -right-3 w-36 bg-white p-1 rounded-3xl">
-        <Button className="bg-[#a2745c] hover:bg-orange-300 text-white hover:w-32 rounded-full hover:p-x-6">
-          Shop <ArrowRight />{" "}
-        </Button>
-      </div> */}
+       
     </div>
   );
 };

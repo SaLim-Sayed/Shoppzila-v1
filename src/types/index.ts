@@ -10,9 +10,10 @@ export interface CarProps {
 export interface IProduct {
  
   name: string;
-  price: string;
+  price: number;
   src: string;
   subSrc: string;
+  desc?:string
 }
 export interface IBox {
  

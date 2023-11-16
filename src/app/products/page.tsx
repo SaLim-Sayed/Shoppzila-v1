@@ -22,7 +22,7 @@ const Products = async ({}: IProps) => {
             </section>
           </div>
         </div>
-     
+    
       </main>
     </div>
   );

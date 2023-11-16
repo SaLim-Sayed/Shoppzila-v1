@@ -26,19 +26,20 @@ export default function NavBar() {
 
   return (
     <Navbar isBordered onMenuOpenChange={setIsMenuOpen}>
-      <NavbarContent>
+      <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
+      </NavbarContent>
 
+      <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
-          <Button  variant="light">
-            {" "}
+          <Button as={Link} href="/" variant="light">
             <Image
               src={Logo}
               alt=""
-              className="relative p-2"
+              className="  p-2"
               width={70}
               height={70}
               priority
@@ -46,14 +47,29 @@ export default function NavBar() {
           </Button>
         </NavbarBrand>
       </NavbarContent>
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem className=" flex justify-center">
+
+      <NavbarContent className="hidden sm:flex  lg:gap-32  " justify="center">
+        <NavbarBrand>
+          <Button as={Link} href="/" variant="light">
+            {" "}
+            <Image
+              src={Logo}
+              alt=""
+              className="  p-2"
+              width={70}
+              height={70}
+              priority
+            />
+          </Button>
+        </NavbarBrand>
+
+        <NavbarItem className="mx-auto">
           {navLinks.map((item) => (
             <Button
               key={item.id}
               as={Link}
               variant="light"
-              className={ ` hover:bg-orange-300 font-light mx-2 ${
+              className={` hover:bg-orange-300 font-light mx-2 ${
                 selectedButton === item.id ? "text-warning" : ""
               }`}
               onClick={() => handleButtonClick(item.id)}
@@ -79,7 +95,6 @@ export default function NavBar() {
         </NavbarItem>
       </NavbarContent>
 
-   
       <NavbarMenu>
         {navLinks.map((item) => (
           <NavbarMenuItem key={item.id}>

@@ -1,8 +1,7 @@
-import { RootState } from './../../store';
+ 
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { IProduct } from "../../../types";
-import { addItemToShoppingCart } from "../../../utils/functions";
+import { IProduct } from "../../../types"; 
 
 interface CounterState {
   cartItems: IProduct[];
@@ -18,11 +17,11 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addItemToCartAction: (state, action: PayloadAction<IProduct>) => {
-      state.cartItems = [...state.cartItems, action.payload]
+      state.cartItems = [...state.cartItems, action.payload];
     },
   },
 });
 
 export const { addItemToCartAction } = cartSlice.actions;
- 
+
 export default cartSlice.reducer;
