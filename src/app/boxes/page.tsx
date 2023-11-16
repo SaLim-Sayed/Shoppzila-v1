@@ -1,5 +1,5 @@
 import BoxCard from "@/components/BoxCard";
-import { IBox } from "@/types";
+import { IBox } from "@/interfaces";
 import fetchData from "@/utils";
 
 interface IProps {}

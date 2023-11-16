@@ -1,12 +1,12 @@
 import CarCard from "@/components/CarCard";
-import { CarProps } from "@/types";
+import { CarProps, IProduct } from "@/interfaces";
 import fetchData from "@/utils";
 
 interface IProps {}
 
 const Products = async ({}: IProps) => {
   const url = "https://shoppzila.vercel.app/api/products";
-  const allProducts: CarProps[] = await fetchData(url);
+  const allProducts: IProduct[] = await fetchData(url);
   return (
     <div>
       <main className=" container mx-auto overflow-hidden">
@@ -15,14 +15,13 @@ const Products = async ({}: IProps) => {
             <h1 className="text-xl font-bold">Featured Products</h1>
             <section>
               <div className="home__cars-wrapper  pb-16 cursor-pointer">
-                {allProducts?.map((product,idx) => (
-                  <CarCard key={product.subSrc} idx={idx } car={product} />
+                {allProducts?.map((product, idx) => (
+                  <CarCard key={product.subSrc} idx={idx} car={product} />
                 ))}
               </div>
             </section>
           </div>
         </div>
-    
       </main>
     </div>
   );

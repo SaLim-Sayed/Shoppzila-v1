@@ -10,13 +10,24 @@ import {
   NavbarMenu,
   NavbarMenuToggle,
   NavbarMenuItem,
+  Badge,
+  Avatar,
 } from "@nextui-org/react";
 import Logo from "/public/Logo.png";
 
 import { navLinks } from "@/constants/navLinks";
 import Image from "next/image";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import { IProduct } from "@/interfaces";
+import { ShoppingBasket } from "lucide-react";
+import ModalPage from "./ModalPage";
 
 export default function NavBar() {
+  const cart: IProduct[] = useSelector(
+    (state: RootState) => state.cart.cartItem
+  );
+
   const [selectedButton, setSelectedButton] = useState(1);
 
   const handleButtonClick = (id: number) => {
@@ -83,15 +94,7 @@ export default function NavBar() {
 
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button
-            data-pressed="warning"
-            as={Link}
-            color="warning"
-            href="#"
-            variant="flat"
-          >
-            Cart (0)
-          </Button>
+          <ModalPage />
         </NavbarItem>
       </NavbarContent>
 

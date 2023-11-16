@@ -1,16 +1,19 @@
 "use client";
 
 import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
-import { CarProps } from "@/types";
+import { IProduct } from "@/interfaces";
 import { Button } from "@nextui-org/button";
 import { Search, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addItemToCartAction } from "@/store/slices/cart/cartSlice";
 interface carCardProps {
-  car: CarProps;
+  car: IProduct;
   idx: number;
 }
 const CarCard = ({ car, idx }: carCardProps) => {
+  const dispatch = useDispatch();
   const { name, price, src, subSrc } = car;
   // const dispatch = useAppDispatch();
   const [isHovered, setIsHovered] = useState(false);
@@ -47,7 +50,7 @@ const CarCard = ({ car, idx }: carCardProps) => {
               as={Link}
               href={`/products/${idx + 1} `}
               className="absolute -bottom-4 z-50 -right-[0.52rem] h-16 w-16 rounded-tr-none  cursor-pointer   flex justify-center items-center  hover:bg-white bg-white font-light mx-2"
-              onClick={() => console.log(name)}
+              onClick={() => dispatch(addItemToCartAction(car))}
             >
               <ShoppingCart fill="black" />
             </Button>
@@ -61,7 +64,6 @@ const CarCard = ({ car, idx }: carCardProps) => {
         </CardFooter>
       </Card>
     </div>
-     
   );
 };
 

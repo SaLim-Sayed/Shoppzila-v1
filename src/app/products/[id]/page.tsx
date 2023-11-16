@@ -1,6 +1,6 @@
 "use client";
 
-import { IProduct } from "@/types";
+import { IProduct } from "@/interfaces";
 import fetchData from "@/utils";
 import Image from "next/image";
 
@@ -8,6 +8,9 @@ import { Button } from "@nextui-org/button";
 import { Card, CardBody } from "@nextui-org/card";
 import ProductSize from "@/components/ProductSize";
 import { BreadcrumbItem, Breadcrumbs } from "@nextui-org/react";
+
+import CircleColor from "@/components/ui/CircleColor";
+import AddButtun from "./AddButtun";
 
 interface IProps {
   params: {
@@ -18,7 +21,7 @@ interface IProps {
 const page = async ({ params }: IProps) => {
   const { id } = params;
 
-  const url = `http://localhost:3000/api/product/${id}`;
+  const url = `https://shoppzila.vercel.app/api/product/${id}`;
   const product: IProduct[] = await fetchData(url);
 
   return (
@@ -50,7 +53,7 @@ const page = async ({ params }: IProps) => {
                     height={400}
                     src={item.src}
                   />
-                  
+
                   <div className="flex-1 gap-4">
                     <h2 className="text-lg font-bold uppercase">{item.name}</h2>
 
@@ -63,13 +66,14 @@ const page = async ({ params }: IProps) => {
                     </div>
                     <hr />
                     <p className="text-sm text-default-500"> {item.desc}</p>
+                    <div className=" flex m-2 gap-2">
+                      <CircleColor />
+                    </div>
                     <ProductSize />
 
                     <div className="mt-6 flex gap-6">
                       <Button color="primary">Buy now</Button>
-                      <Button color="primary" variant="bordered" radius="full">
-                        Add to bag
-                      </Button>
+                      <AddButtun product={item} />
                     </div>
                   </div>
                 </div>

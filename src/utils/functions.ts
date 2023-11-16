@@ -1,18 +1,18 @@
-import { IProduct } from "../types";
+import { IProduct } from "../interfaces";
 
 export const addItemToShoppingCart = (
-  cartItems: IProduct[],
+  cartItem: IProduct[],
   product: IProduct
 ) => {
-  const exists = cartItems.find((item) => item.src == product.src);
+  const exists = cartItem.find((item) => item.src == product.src);
   console.log(exists);
 
   if (exists) {
-    return cartItems.map((item) =>
-      item.src == product.src ? { ...item  } : item
+    return cartItem.map((item) =>
+      item.src == product.src ? { ...item, qty: item.qty + 1 } : item
     );
   } else {
     // If the item doesn't exist, add it to the cart with a quantity of 1
-    return [...cartItems, { ...product  }];
+    return [...cartItem, { ...product, qty: 1 }];
   }
 };

@@ -14,6 +14,7 @@ export interface IProduct {
   src: string;
   subSrc: string;
   desc?:string
+  qty: number;
 }
 export interface IBox {
  

@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Skeleton } from "@nextui-org/react";
-import { CarProps } from "@/types";
+import { CarProps } from "@/interfaces";
 import fetchData from "@/utils";
 
 export default async function App() {

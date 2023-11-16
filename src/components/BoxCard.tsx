@@ -1,6 +1,6 @@
 "use client";
 
-import { IBox } from "@/types";
+import { IBox } from "@/interfaces";
 // import { Button } from "@nextui-org/button";
 import {  ArrowRight } from "lucide-react";
 import {
