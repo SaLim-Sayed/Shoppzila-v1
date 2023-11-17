@@ -1,7 +1,7 @@
 import CategoryPage from "@/components/Category";
-import { ICategory } from "@/interfaces";
-import { useQuery } from "react-query";
-import Loading from "../loading";
+import { ICategory } from "@/interfaces"; 
+import Loading from "./loading";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 const fetchData = async () => {
   const response = await fetch("https://shoppzila.vercel.app/api/categories");
@@ -10,7 +10,17 @@ const fetchData = async () => {
 };
 
 const Categories: React.FC = () => {
-  const { data, isLoading } = useQuery("data", fetchData);
+   const queryClient = useQueryClient()
+  const { data, isLoading } = useQuery( { queryKey: ["data"], queryFn: fetchData } );
+ 
+  // Mutations
+  const mutation = useMutation({
+     
+    onSuccess: () => {
+      // Invalidate and refetch
+      queryClient.invalidateQueries({ queryKey: ['data'] })
+    },
+  })
 
   if (isLoading) {
     return <Loading/>;

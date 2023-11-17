@@ -1,6 +1,6 @@
 "use client";
 import { store } from "@/store/store";
-import { QueryClient, QueryClientProvider } from "react-query";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from "react-query/devtools";
 
 import { NextUIProvider } from "@nextui-org/react";

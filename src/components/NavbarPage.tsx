@@ -5,27 +5,19 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Link,
-  Button,
+ 
   NavbarMenu,
   NavbarMenuToggle,
   NavbarMenuItem,
- 
+  Button,
 } from "@nextui-org/react";
- 
+import Link from "next/link";
 
 import { navLinks } from "@/constants/navLinks";
-import Image from "next/image";
-import { useSelector } from "react-redux";
-import { RootState } from "@/store/store";
-import { IProduct } from "@/interfaces"; 
+import Image from "next/image"; 
 import ModalPage from "./ModalPage";
 
 export default function NavBar() {
-  const cart: IProduct[] = useSelector(
-    (state: RootState) => state.cart.cartItem
-  );
-
   const [selectedButton, setSelectedButton] = useState(1);
 
   const handleButtonClick = (id: number) => {
@@ -41,10 +33,9 @@ export default function NavBar() {
           className="sm:hidden"
         />
       </NavbarContent>
-
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
-          <Button as={Link} href="/" variant="light">
+          <Link href="/" passHref>
             <Image
               src="/Logo.png"
               alt=""
@@ -53,13 +44,13 @@ export default function NavBar() {
               height={70}
               priority
             />
-          </Button>
+          </Link>
         </NavbarBrand>
       </NavbarContent>
-
+      
       <NavbarContent className="hidden sm:flex  lg:gap-32  " justify="center">
         <NavbarBrand>
-          <Button as={Link} href="/" variant="light">
+          <Link href="/" passHref>
             {" "}
             <Image
               src="/Logo.png"
@@ -69,18 +60,23 @@ export default function NavBar() {
               height={70}
               priority
             />
-          </Button>
+          </Link>
         </NavbarBrand>
 
         <NavbarItem className="mx-auto">
           {navLinks.map((item) => (
-            <Button
+            <Button as={Link}
+            variant="light"
+              passHref
               key={item.id}
-              as={Link}
-              variant="light"
-              className={` hover:bg-orange-300 font-light mx-2 ${
+              /* className={` hover:bg-orange-300 font-light mx-2 ${
                 selectedButton === item.id ? "text-warning" : ""
-              }`}
+              }`} */
+              style={
+                selectedButton === item.id
+                  ? { color: "orange" }
+                  : { color: "black" }
+              }
               onClick={() => handleButtonClick(item.id)}
               href={item.url}
             >
@@ -89,21 +85,19 @@ export default function NavBar() {
           ))}
         </NavbarItem>
       </NavbarContent>
-
       <NavbarContent justify="end">
         <NavbarItem>
           <ModalPage />
         </NavbarItem>
       </NavbarContent>
-
       <NavbarMenu>
         {navLinks.map((item) => (
           <NavbarMenuItem key={item.id}>
             <Link
+              passHref
               className="w-full"
               color={item.id === 1 ? "warning" : "foreground"}
               href="#"
-              size="lg"
             >
               {item.title}
             </Link>

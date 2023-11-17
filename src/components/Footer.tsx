@@ -1,3 +1,4 @@
+"use client";
 import React, { ReactNode } from "react";
 
 import { ArrowRight, Facebook, Github, Instagram, Twitter } from "lucide-react";
@@ -71,8 +72,9 @@ const Footer = () => {
               <input
                 type="text"
                 placeholder="Enter your email address"
-                value=""
-                className=" rounded-md border-none  outline-none   lg:pl-10 w-fit  py-2"
+                 
+                onChange={(e) => e.target.value}
+                className=" rounded-md border-none text-black  outline-none   lg:pl-10 w-fit  py-2"
               />
               <div className=" flex items-center justify-center absolute right-4 top-2 w-6 h-6 rounded-full hover:bg-white border-1 bg-orange-400 border-orange-400 ">
                 <ArrowRight

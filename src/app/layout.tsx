@@ -23,8 +23,8 @@ export default function RootLayout({
       <body suppressHydrationWarning={true} className={inter.className}>
         <Providers>
           <NavBar />
-          {children}
-          <hr />
+         <div className=" min-h-[11.5rem] "> {children}</div>
+          
           <Footer />
         </Providers>
       </body>
