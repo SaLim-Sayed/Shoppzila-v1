@@ -30,7 +30,7 @@ const CategoryPage = ({ category }: IProps) => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="  shrink-0 w-[137px] h-[137px] overflow-hidden">
+        <div className=" cursor-pointer  shrink-0 w-[137px] h-[137px] overflow-hidden">
           <Image
             isZoomed
             className="rounded-full  "

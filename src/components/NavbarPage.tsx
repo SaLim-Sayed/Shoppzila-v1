@@ -5,7 +5,6 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
- 
   NavbarMenu,
   NavbarMenuToggle,
   NavbarMenuItem,
@@ -39,15 +38,14 @@ export default function NavBar() {
             <Image
               src="/Logo.png"
               alt=""
-              className="  p-2"
+              className="p-2"
               width={70}
               height={70}
-              
             />
           </Link>
         </NavbarBrand>
       </NavbarContent>
-      
+
       <NavbarContent className="hidden sm:flex  lg:gap-32  " justify="center">
         <NavbarBrand>
           <Link href="/" passHref>
@@ -58,15 +56,15 @@ export default function NavBar() {
               className="  p-2"
               width={70}
               height={70}
-               
             />
           </Link>
         </NavbarBrand>
 
         <NavbarItem className="mx-auto">
           {navLinks.map((item) => (
-            <Button as={Link}
-            variant="light"
+            <Button
+              as={Link}
+              variant="light"
               passHref
               key={item.id}
               /* className={` hover:bg-orange-300 font-light mx-2 ${
@@ -96,7 +94,7 @@ export default function NavBar() {
             <Link
               passHref
               className="w-full"
-              color={selectedButton===item.id  ? "warning" : "foreground"}
+              color={selectedButton === item.id ? "warning" : "foreground"}
               href="#"
             >
               {item.title}

@@ -5,21 +5,23 @@ import Products from "./products/page";
 import ShopSkill from "@/components/ShopSkill";
 import Categories from "./categories/page";
 import CardComponent from "@/components/Slider";
+import SwipperPage from "@/components/SwipperPage";
 
- 
- 
 export default function Home() {
   return (
-     
-      <>
-      <CardComponent/>
-      <Categories/>
-        <Products />
-        <BoxPage />
-        <CollectionPage />
-        <ShopSkill/>
-        
-       
-      </>
+    <>
+      <main className=" container  mx-auto  my-4">
+        <div className="flex gap-[30px] flex-col lg:flex-row   max-width  ">
+          <SwipperPage />
+
+          <CardComponent />
+        </div>
+      </main>
+      <Categories />
+      <Products />
+      <BoxPage />
+      <CollectionPage />
+      <ShopSkill />
+    </>
   );
 }
