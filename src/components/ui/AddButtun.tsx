@@ -1,3 +1,5 @@
+"use client";
+
 import { addItemToCartAction } from "@/store/slices/cart/cartSlice";
 import { IProduct } from "@/interfaces";
 import { Button } from "@nextui-org/button";

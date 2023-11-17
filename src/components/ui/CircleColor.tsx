@@ -1,3 +1,5 @@
+"use client";
+
 import { colorList } from "@/constants";
 import { useState } from "react";
 import clsx from "clsx";
