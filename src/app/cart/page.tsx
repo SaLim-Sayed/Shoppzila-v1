@@ -1,37 +1,33 @@
-import { useQuery } from 'react-query';
-import { useDispatch, useSelector } from 'react-redux';
- 
-import { addItemToCartAction } from '@/store/slices/cart/cartSlice';
-import { RootState } from '@/store/store';
-import { IProduct } from "@/interfaces";
+import CategoryPage from "@/components/Category";
+import { ICategory } from "@/interfaces";
+import { useQuery } from "react-query";
+import Loading from "../loading";
 
 const fetchData = async () => {
-  const response = await fetch("https://shoppzila.vercel.app/api/products");
+  const response = await fetch("https://shoppzila.vercel.app/api/categories");
   const data = await response.json();
   return data;
 };
 
-const HomePage: React.FC = () => {
-  const dispatch = useDispatch();
-  const cart: IProduct[] = useSelector(
-    (state: RootState) => state.cart.cartItem
-  );
-  console.log(cart);
+const Categories: React.FC = () => {
   const { data, isLoading } = useQuery("data", fetchData);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loading/>;
   }
-
+  const category: ICategory[] = data;
   return (
-    <div>
-      <h1></h1>
-      <button onClick={() => dispatch(addItemToCartAction(data))}>
-        Set Redux Value
-      </button>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-    </div>
+    <main className=" container mx-auto overflow-hidden">
+      <div className="mt-12 padding-x padding-y max-width" id="discover">
+        <h1 className="text-xl font-bold">Explore Popular Categories</h1>
+        <div className=" flex py-6 gap-0 overflow-hidden">
+          {category.map((el,idx) => (
+            <CategoryPage key={idx} index={idx}  category={el}  />
+          ))}
+        </div>
+      </div>
+    </main>
   );
 };
 
-export default HomePage;
+export default Categories;

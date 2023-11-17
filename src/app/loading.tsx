@@ -3,7 +3,7 @@ import { Card, Skeleton } from "@nextui-org/react";
 import { CarProps } from "@/interfaces";
 import fetchData from "@/utils";
 
-export default async function App() {
+export default async function Loading() {
   const url = "https://shoppzila.vercel.app/api/products";
 
   const allProducts: CarProps[] = await fetchData(url);
@@ -12,7 +12,6 @@ export default async function App() {
       <main className=" container overflow-hidden">
         <div className="mt-12 padding-x padding-y max-width" id="discover">
           <div className="home__text-container">
-            <h1 className="text-4xl font-extrabold">Featured Products</h1>
             <section>
               <div className="home__cars-wrapper">
                 {allProducts?.map((product) => (

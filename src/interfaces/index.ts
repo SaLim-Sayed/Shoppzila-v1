@@ -7,6 +7,11 @@ export interface CarProps {
    
 }
 
+export interface ICategory{
+  title: string;
+  src:string
+}
+
 export interface IProduct {
  
   name: string;
@@ -23,3 +28,8 @@ export interface IBox {
   src: string;
    
 }
+export interface FooterColumn {
+  title: string;
+  links: string[];
+}
+

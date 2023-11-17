@@ -21,7 +21,7 @@ interface IProps {
 const page = async ({ params }: IProps) => {
   const { id } = params;
 
-  const url = `https://shoppzila.vercel.app/api/product/${id}`;
+  const url = `http://localhost:3000/api/product/${id}`;
   const product: IProduct[] = await fetchData(url);
 
   return (

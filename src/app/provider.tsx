@@ -12,7 +12,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
         <NextUIProvider> {children}</NextUIProvider>
-        <ReactQueryDevtools />
+         
       </QueryClientProvider>
     </Provider>
   );

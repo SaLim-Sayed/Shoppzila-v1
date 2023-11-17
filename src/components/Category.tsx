@@ -1,29 +1,47 @@
-"use client"
- import {useRef,useEffect} from 'react'
-import Image from "next/image";
-import React from "react";
+"use client";
+import { ICategory } from "@/interfaces";
+import { Image } from "@nextui-org/react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 
-export default function Category() {
-    const imgRef =  useRef(null)
-    useEffect(() => {
-     if(imgRef.current){
-        
-     }
-    }, [])
-    
-  return (
-    <div ref={imgRef} className=" flex  gap-4 overflow-scroll  ">
-      {Array.from({ length: 10 }).map((_, idx) => (
-        <div className="   shrink-0 w-[150px]  h-[150px]" key={idx}>
-          <Image
-            width={200}
-            height={200}
-            className="rounded-full w-full h-full block"
-            alt="NextUI Fruit Image with Zoom"
-            src="https://nextui-docs-v2.vercel.app/images/fruit-1.jpeg"
-          />
-        </div>
-      ))}
-    </div>
-  );
+interface IProps {
+  category: ICategory;
+  index: number;
 }
+
+const CategoryPage = ({ category }: IProps) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % 8);
+    }, 2000); // Change the duration as needed
+
+    return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex]);
+
+  return (
+    <AnimatePresence>
+      <motion.div
+        className="flex flex-col justify-center space-y-2"
+        key={currentIndex}
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="  shrink-0 w-[137px] h-[137px] overflow-hidden">
+          <Image
+            isZoomed
+            className="rounded-full  "
+            alt={category.title}
+            src={category.src}
+          /> 
+        </div>
+        <h2 className=" flex justify-center">{category.title}</h2>
+      </motion.div>
+    </AnimatePresence>
+  );
+};
+
+export default CategoryPage;

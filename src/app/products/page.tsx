@@ -11,7 +11,7 @@ const Products = async ({}: IProps) => {
     <div>
       <main className=" container mx-auto overflow-hidden">
         <div className="mt-12 padding-x padding-y max-width" id="discover">
-          <div className=" ">
+         
             <h1 className="text-xl font-bold">Featured Products</h1>
             <section>
               <div className="home__cars-wrapper  pb-16 cursor-pointer">
@@ -20,7 +20,6 @@ const Products = async ({}: IProps) => {
                 ))}
               </div>
             </section>
-          </div>
         </div>
       </main>
     </div>
