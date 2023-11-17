@@ -10,11 +10,11 @@ import {
   NavbarMenuToggle,
   NavbarMenuItem,
   Button,
+  Image,
 } from "@nextui-org/react";
 import Link from "next/link";
 
 import { navLinks } from "@/constants/navLinks";
-import Image from "next/image"; 
 import ModalPage from "./ModalPage";
 
 export default function NavBar() {
@@ -42,7 +42,7 @@ export default function NavBar() {
               className="  p-2"
               width={70}
               height={70}
-              priority
+              
             />
           </Link>
         </NavbarBrand>
@@ -58,7 +58,7 @@ export default function NavBar() {
               className="  p-2"
               width={70}
               height={70}
-              priority
+               
             />
           </Link>
         </NavbarBrand>
