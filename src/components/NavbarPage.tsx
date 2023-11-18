@@ -36,7 +36,7 @@ export default function NavBar() {
         <NavbarBrand>
           <Link href="/" passHref>
             <Image
-              src="/Logo.png"
+              src="/LOGO.png"
               alt=""
               className="p-2"
               width={70}
@@ -51,7 +51,7 @@ export default function NavBar() {
           <Link href="/" passHref>
             {" "}
             <Image
-              src="/Logo.png"
+              src="/LOGO.png"
               alt=""
               className="  p-2"
               width={70}
