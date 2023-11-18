@@ -33,15 +33,15 @@ export default function ModalPage() {
   };
 
   return (
-    <div className="flex flex-col    gap-2">
+    <div className="flex flex-col  gap-2">
       <Button variant="light" onPress={onOpen}>
         <Badge
           content={cart.length}
-          color="success"
+          color="warning"
           className="mt-2"
           shape="circle"
         >
-          <ShoppingCart className=" mt-3 text-orange-400" />
+          <ShoppingCart fill="#A2745C" className=" mt-3 text-[#A2745C]" />
         </Badge>
       </Button>
 
@@ -56,6 +56,7 @@ export default function ModalPage() {
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         scrollBehavior="outside"
+        
       >
         <ModalContent className="relative  ">
           {(onClose) => (

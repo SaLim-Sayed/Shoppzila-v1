@@ -3,7 +3,7 @@ import { Card, CardBody, Image, Button, Slider } from "@nextui-org/react";
 import { IProduct } from "@/interfaces";
 import { useDispatch } from "react-redux";
 import { removeItemFromCartAction } from "@/store/slices/cart/cartSlice";
-import {   Trash } from "lucide-react";
+import { Trash } from "lucide-react";
 
 interface IProps {
   product: IProduct;
@@ -18,10 +18,10 @@ export default function ShopingCartItem({ product }: IProps) {
 
   return (
     <Card
-      isBlurred
-      className="border-none bg-background/60 dark:bg-default-100/50   max-w-[610px]"
+       
+      className="border-none bg-background/60 dark:bg-default-100/70 overflow-hidden  font-light text-sm  max-w-[610px]"
       style={{ color: product.color || "black" }}
-      shadow="sm"
+      shadow="lg"
     >
       <CardBody>
         <div className="grid grid-cols-6 md:grid-cols-12 gap-6 md:gap-4 items-center justify-center">
@@ -39,28 +39,26 @@ export default function ShopingCartItem({ product }: IProps) {
             <div className="flex justify-between items-start">
               <div className="flex flex-col gap-0">
                 <h3 className="font-semibold ">{product.name}</h3>
-
-                <p className=" ">Size : {product.size}</p>
-                <p className=" ">
-                  Total Salary : {product.count * product.price} $
-                </p>
-                <div className=" flex  items-center gap-4">
-                  <p>Color : {product.color}</p>
-                  <Button
-                    radius="full"
-                    size="sm"
-                    isIconOnly
+                <p className="flex items-center gap-2">
+                  <span>Color : {product.color} </span>
+                  <span
                     className={
-                      " flex   justify-center items-center cursor-pointer"
+                      " flex  w-[15px] h-[15px] rounded-full  cursor-pointer"
                     }
                     style={{ backgroundColor: product.color }}
-                  ></Button>
+                  ></span>
+                </p>
+                <p className=" ">Size : {product.size}</p>
+
+                <div className=" flex justify-between  items-center gap-4">
+                  <p className=" ">
+                    count : {product.count}x{product.price} $
+                  </p>
+
                   <Button
                     isIconOnly
                     color="danger"
-                    onClick={() =>
-                      handleRemoveItem(product)
-                    }
+                    onClick={() => handleRemoveItem(product)}
                   >
                     <Trash />
                   </Button>
