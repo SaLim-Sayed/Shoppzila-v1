@@ -14,7 +14,7 @@ const Products = async ({}: IProps) => {
         <div className="mt-12 padding-x padding-y max-width" id="discover">
           <h1 className="text-xl font-bold">Featured Products</h1>
           <section>
-            <div className="home__cars-wrapper    pb-16 cursor-pointer">
+            <div className="home__card-wrapper    pb-16 cursor-pointer">
               {allProducts?.map((product, idx) => (
                 <ProductsCard key={product.subSrc} idx={idx} product={product} />
               ))}

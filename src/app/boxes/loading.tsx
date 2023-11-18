@@ -10,7 +10,7 @@ export default async function App() {
     <main className=" container overflow-hidden">
       <div className="mt-12 padding-x padding-y max-width" id="discover">
         <div className="home__text-container">
-          <div className="home__cars-wrapper">
+          <div className="home__card-wrapper">
             {allProducts?.map((product) => (
               <Card
                 key={product.src}

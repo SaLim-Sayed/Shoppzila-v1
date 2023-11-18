@@ -12,7 +12,7 @@ const BoxPage = async ({}: IProps) => {
       <div className="mt-12 padding-x padding-y max-width" id="discover">
         <div className=" ">
           <section>
-            <div className="home__cars-wrapper  pb-10 cursor-pointer">
+            <div className="home__card-wrapper  pb-10 cursor-pointer">
               {boxes?.map((box, idx) => (
                 <BoxCard key={box.src} idx={idx} box={box} />
               ))}

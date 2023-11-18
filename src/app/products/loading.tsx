@@ -8,7 +8,7 @@ export default async function App() {
         <div className="mt-12 padding-x padding-y max-width" id="discover">
           <div className="home__text-container">
             <section>
-              <div className="home__cars-wrapper">
+              <div className="home__card-wrapper">
                 <Card className="w-[200px] space-y-5 p-4" radius="lg">
                   <Skeleton className="rounded-lg">
                     <div className="h-24 rounded-lg bg-default-300"></div>
