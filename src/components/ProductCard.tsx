@@ -25,8 +25,8 @@ interface IProps {
 const ProductCard = ({ item }: IProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const [tempColor, setTempColor] = useState<string>("gray");
-  const [selectedColor, setSelectedColor] = useState(2);
+  const [tempColor, setTempColor] = useState<string>("#F31260");
+  const [selectedColor, setSelectedColor] = useState(0);
 
   const [selectedSize, setSelectedSize] = useState(3);
   const [tempSize, setTempSize] = useState<string>("L");
@@ -38,7 +38,7 @@ const ProductCard = ({ item }: IProps) => {
   };
 
   const handleDecrease = () => {
-    if (count > 0) {
+    if (count > 1) {
       setCount(count - 1);
     }
   };
@@ -73,7 +73,7 @@ const ProductCard = ({ item }: IProps) => {
                 />
 
                 <div className="flex-1 gap-4">
-                  <h2 className="text-lg font-bold uppercase">{item.name}</h2>
+                  <h2 className="text-lg font-bold capitalize">{item.name}</h2>
 
                   <div className="mb-6 mt-2 flex gap-3">
                     <span className="font-bold">${item.price}</span>
