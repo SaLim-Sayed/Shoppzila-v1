@@ -1,15 +1,12 @@
 import React from "react";
 import { Card, Skeleton } from "@nextui-org/react";
-import { CarProps } from "@/interfaces";
-import fetchData from "@/utils";
-
+ 
 export default async function App() {
   return (
     <div>
-      <main className=" container overflow-hidden">
+      <main className=" container mx-auto overflow-hidden">
         <div className="mt-12 padding-x padding-y max-width" id="discover">
           <div className="home__text-container">
-            <h1 className="text-4xl font-extrabold">Featured Products</h1>
             <section>
               <div className="home__cars-wrapper">
                 <Card className="w-[200px] space-y-5 p-4" radius="lg">

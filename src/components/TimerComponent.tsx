@@ -4,7 +4,7 @@ import { Button, Image } from "@nextui-org/react";
 import React, { useEffect, useState } from "react";
 
 // Define the component
-const CardComponent: React.FC = () => {
+const TimerComponent: React.FC = () => {
   const calculateTimeLeft = () => {
     function getDaysInMonth(month: number, year: number) {
       // Months are zero-based, so we subtract 1 from the input month
@@ -121,4 +121,4 @@ const CardComponent: React.FC = () => {
   );
 };
 
-export default CardComponent;
+export default TimerComponent;

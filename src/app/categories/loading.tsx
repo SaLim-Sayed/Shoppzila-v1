@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Skeleton } from "@nextui-org/react";
+import {   Skeleton } from "@nextui-org/react";
 import { CarProps } from "@/interfaces";
 import fetchData from "@/utils";
 
@@ -8,40 +8,28 @@ export default async function Loading() {
 
   const allProducts: CarProps[] = await fetchData(url);
   return (
-    <div>
-      <main className=" container overflow-hidden">
-        <div className="mt-12 padding-x padding-y max-width" id="discover">
-          <div className="home__text-container">
-            <section>
-              <div className="home__cars-wrapper">
-                {allProducts?.map((product) => (
-                  <Card
-                    key={product.src}
-                    className="w-[200px] space-y-5 p-4"
-                    radius="lg"
-                  >
-                    <Skeleton className="rounded-lg">
-                      <div className="h-24 rounded-lg bg-default-300"></div>
-                    </Skeleton>
-                    <div className="space-y-3">
-                      <Skeleton className="w-3/5 rounded-lg">
-                        <div className="h-3 w-3/5 rounded-lg bg-default-200"></div>
-                      </Skeleton>
-                      <Skeleton className="w-4/5 rounded-lg">
-                        <div className="h-3 w-4/5 rounded-lg bg-default-200"></div>
-                      </Skeleton>
-                      <Skeleton className="w-2/5 rounded-lg">
-                        <div className="h-3 w-2/5 rounded-lg bg-default-300"></div>
-                      </Skeleton>
-                    </div>
-                  </Card>
-                ))}
+    <main className=" container mx-auto overflow-hidden">
+      <div className="mt-12 padding-x padding-y max-width" id="discover">
+        <h1 className="text-xl font-bold">Explore Popular Categories</h1>
+        <div className=" flex py-6 gap-0 overflow-hidden">
+          {allProducts?.map((product) => (
+            <div
+              key={product.src}
+              className=" cursor-pointer  shrink-0 w-[137px] h-[137px] overflow-hidden"
+            >
+              <div className="max-w-[300px] w-full flex items-center gap-3">
+                <div>
+                  <Skeleton className="flex rounded-full w-12 h-12" />
+                </div>
+                <div className="w-full flex flex-col gap-2">
+                  <Skeleton className="h-3 w-3/5 rounded-lg" />
+                  <Skeleton className="h-3 w-4/5 rounded-lg" />
+                </div>
               </div>
-            </section>
-          </div>
+            </div>
+          ))}
         </div>
-        <hr />
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }

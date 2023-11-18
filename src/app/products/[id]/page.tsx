@@ -1,15 +1,12 @@
-
 import ProductCard from "@/components/ProductCard";
 import { IProduct } from "@/interfaces";
 import fetchData from "@/utils";
- 
 
 interface IProps {
   params: {
     id: number;
   };
 }
- 
 
 const page = async ({ params }: IProps) => {
   const { id } = params;

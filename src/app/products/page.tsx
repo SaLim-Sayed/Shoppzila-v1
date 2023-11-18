@@ -1,5 +1,6 @@
-import CarCard from "@/components/ProductsCard";
-import { CarProps, IProduct } from "@/interfaces";
+ 
+import ProductsCard from "@/components/ProductsCard";
+import { IProduct } from "@/interfaces";
 import fetchData from "@/utils";
 
 interface IProps {}
@@ -11,15 +12,14 @@ const Products = async ({}: IProps) => {
     <div>
       <main className=" container mx-auto overflow-hidden">
         <div className="mt-12 padding-x padding-y max-width" id="discover">
-         
-            <h1 className="text-xl font-bold">Featured Products</h1>
-            <section>
-              <div className="home__cars-wrapper  pb-16 cursor-pointer">
-                {allProducts?.map((product, idx) => (
-                  <CarCard key={product.subSrc} idx={idx} car={product} />
-                ))}
-              </div>
-            </section>
+          <h1 className="text-xl font-bold">Featured Products</h1>
+          <section>
+            <div className="home__cars-wrapper    pb-16 cursor-pointer">
+              {allProducts?.map((product, idx) => (
+                <ProductsCard key={product.subSrc} idx={idx} product={product} />
+              ))}
+            </div>
+          </section>
         </div>
       </main>
     </div>

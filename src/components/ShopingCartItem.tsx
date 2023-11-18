@@ -1,12 +1,20 @@
 import React from "react";
 import { Card, CardBody, Image, Button, Slider } from "@nextui-org/react";
 import { IProduct } from "@/interfaces";
+import { useDispatch } from "react-redux";
+import { removeItemFromCartAction } from "@/store/slices/cart/cartSlice";
+import { Delete, Trash } from "lucide-react";
 
 interface IProps {
   product: IProduct;
 }
 
 export default function ShopingCartItem({ product }: IProps) {
+  const dispatch = useDispatch();
+
+  const handleRemoveItem = (itemToRemove: IProduct) => {
+    dispatch(removeItemFromCartAction(itemToRemove));
+  };
 
   return (
     <Card
@@ -33,7 +41,9 @@ export default function ShopingCartItem({ product }: IProps) {
                 <h3 className="font-semibold ">{product.name}</h3>
 
                 <p className=" ">Size : {product.size}</p>
-                <p className=" ">Total Salary : { product.count * product.price} $</p>
+                <p className=" ">
+                  Total Salary : {product.count * product.price} $
+                </p>
                 <div className=" flex  items-center gap-4">
                   <p>Color : {product.color}</p>
                   <Button
@@ -45,6 +55,15 @@ export default function ShopingCartItem({ product }: IProps) {
                     }
                     style={{ backgroundColor: product.color }}
                   ></Button>
+                  <Button
+                    isIconOnly
+                    color="danger"
+                    onClick={() =>
+                      handleRemoveItem(product)
+                    }
+                  >
+                    <Trash />
+                  </Button>
                 </div>
               </div>
             </div>

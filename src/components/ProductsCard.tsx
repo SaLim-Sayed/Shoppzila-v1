@@ -8,12 +8,12 @@ import Link from "next/link";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 interface IProductCardProps {
-  car: IProduct;
+  product: IProduct;
   idx: number;
 }
-const CarCard = ({ car, idx }: IProductCardProps) => {
+const ProductsCard = ({ product, idx }: IProductCardProps) => {
   const dispatch = useDispatch();
-  const { name, price, src, subSrc } = car;
+  const { name, price, src, subSrc } = product;
   // const dispatch = useAppDispatch();
   const [isHovered, setIsHovered] = useState(false);
   return (
@@ -66,4 +66,4 @@ const CarCard = ({ car, idx }: IProductCardProps) => {
   );
 };
 
-export default CarCard;
+export default ProductsCard;

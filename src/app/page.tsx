@@ -4,8 +4,8 @@ import BoxPage from "./boxes/page";
 import Products from "./products/page";
 import ShopSkill from "@/components/ShopSkill";
 import Categories from "./categories/page";
-import CardComponent from "@/components/Slider";
 import SwipperPage from "@/components/SwipperPage";
+import TimerComponent from "@/components/TimerComponent";
 
 export default function Home() {
   return (
@@ -13,8 +13,7 @@ export default function Home() {
       <main className=" container  mx-auto  my-4">
         <div className="flex gap-[30px] flex-col lg:flex-row   max-width  ">
           <SwipperPage />
-
-          <CardComponent />
+          <TimerComponent />
         </div>
       </main>
       <Categories />
