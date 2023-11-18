@@ -95,7 +95,7 @@ export default function NavBar() {
               passHref
               className="w-full"
               color={selectedButton === item.id ? "warning" : "foreground"}
-              href="#"
+              href={item.url}
             >
               {item.title}
             </Link>
