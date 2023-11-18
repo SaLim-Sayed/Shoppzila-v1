@@ -3,7 +3,7 @@ import { Card, CardBody, Image, Button, Slider } from "@nextui-org/react";
 import { IProduct } from "@/interfaces";
 import { useDispatch } from "react-redux";
 import { removeItemFromCartAction } from "@/store/slices/cart/cartSlice";
-import { Delete, Trash } from "lucide-react";
+import {   Trash } from "lucide-react";
 
 interface IProps {
   product: IProduct;

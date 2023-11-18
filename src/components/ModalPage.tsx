@@ -16,7 +16,7 @@ import { useSelector } from "react-redux";
 import { IProduct } from "@/interfaces";
 import { RootState } from "@/store/store";
 import ShopingCartItem from "./ShopingCartItem";
-import { ShoppingCart } from "lucide-react";
+import { ShoppingBasket, ShoppingCart } from "lucide-react";
 
 export default function ModalPage() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -24,6 +24,13 @@ export default function ModalPage() {
   const cart: IProduct[] = useSelector(
     (state: RootState) => state.cart.cartItem
   );
+
+  const calculateTotalSalary = () => {
+    return cart.reduce((total, item) => {
+      // Assuming each item has 'price' and 'qty' properties
+      return total + item.price * item.count;
+    }, 0);
+  };
 
   return (
     <div className="flex flex-col    gap-2">
@@ -66,8 +73,8 @@ export default function ModalPage() {
                   }}
                 />
               </div>
-              <ModalHeader className="flex flex-col gap-1">
-                Modal Title
+              <ModalHeader className="flex  gap-1">
+                Shopping Cart List  <ShoppingBasket/>
               </ModalHeader>
               {cart.map((product) => (
                 <ModalBody key={product.name}>
@@ -76,8 +83,8 @@ export default function ModalPage() {
               ))}
               <ModalFooter className="flex absolute bottom-0 left-0 ">
                 <div className="flex justify-between items-center">
-                  <h1>Sub Total :</h1>
-                  <p>{cart.length} </p>
+                  <h1>Total Salary :</h1>
+                  <p>${calculateTotalSalary()}</p>
                 </div>
               </ModalFooter>
             </>
