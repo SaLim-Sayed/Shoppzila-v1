@@ -32,7 +32,7 @@ const ProductCard = ({ item }: IProps) => {
   const [selectedSize, setSelectedSize] = useState(3);
   const [tempSize, setTempSize] = useState<string>("L");
 
-  const [count, setCount] = useState<number>(0);
+  const [count, setCount] = useState<number>(1);
 
   const handleIncrease = () => {
     setCount(count + 1);

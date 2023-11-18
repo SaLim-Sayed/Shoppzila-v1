@@ -26,7 +26,7 @@ export default function Alert({ item, color, size, count }: Iprop) {
     // Set up a timeout to close the modal after 2000 milliseconds (2 seconds)
     const timeoutId = setTimeout(() => {
       onClose(); // Trigger the onClose callback to close the modal
-    }, 1000);
+    }, 500);
 
     // Clean up the timeout when the component unmounts or when the modal is closed manually
     return () => clearTimeout(timeoutId);
@@ -61,7 +61,7 @@ export default function Alert({ item, color, size, count }: Iprop) {
             <>
               <ModalBody className="flex felx-col justify-center items-center">
                 <AlertCircleIcon />
-                <p>Alert</p>
+                <p>Item Added Succesfully !!!</p>
               </ModalBody>
             </>
           )}
