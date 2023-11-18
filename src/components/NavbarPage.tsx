@@ -13,13 +13,8 @@ import {
 } from "@nextui-org/react";
 import Link from "next/link";
 
-<<<<<<< HEAD
 import ModalPage from "./ModalPage";
 import { navLinks } from "@/constants";
-=======
-import { navLinks } from "@/constants/navLinks";
-import ModalPage from "./ModalPage";
->>>>>>> origin/master
 
 export default function NavBar() {
   const [selectedButton, setSelectedButton] = useState(1);

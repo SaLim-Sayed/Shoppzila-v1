@@ -1,20 +1,12 @@
 import React from "react";
 import {   Skeleton } from "@nextui-org/react";
-<<<<<<< HEAD
 import { IProduct } from "@/interfaces";
-=======
-import { CarProps } from "@/interfaces";
->>>>>>> origin/master
 import fetchData from "@/utils";
 
 export default async function Loading() {
   const url = "https://shoppzila.vercel.app/api/products";
 
-<<<<<<< HEAD
   const allProducts: IProduct[] = await fetchData(url);
-=======
-  const allProducts: CarProps[] = await fetchData(url);
->>>>>>> origin/master
   return (
     <main className=" container mx-auto overflow-hidden">
       <div className="mt-12 padding-x padding-y max-width" id="discover">
