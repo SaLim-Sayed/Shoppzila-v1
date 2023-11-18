@@ -7,12 +7,12 @@ interface IProps {
 }
 
 export default function ShopingCartItem({ product }: IProps) {
-  const [liked, setLiked] = React.useState(false);
 
   return (
     <Card
       isBlurred
       className="border-none bg-background/60 dark:bg-default-100/50   max-w-[610px]"
+      style={{ color: product.color || "black" }}
       shadow="sm"
     >
       <CardBody>
@@ -30,10 +30,22 @@ export default function ShopingCartItem({ product }: IProps) {
           <div className="flex flex-col col-span-6 md:col-span-8">
             <div className="flex justify-between items-start">
               <div className="flex flex-col gap-0">
-                <h3 className="font-semibold text-foreground/90">
-                  {product.name}
-                </h3>
-                <p className="text-small text-foreground/80">{product.desc}</p>
+                <h3 className="font-semibold ">{product.name}</h3>
+
+                <p className=" ">Size : {product.size}</p>
+                <p className=" ">Total Salary : { product.count * product.price} $</p>
+                <div className=" flex  items-center gap-4">
+                  <p>Color : {product.color}</p>
+                  <Button
+                    radius="full"
+                    size="sm"
+                    isIconOnly
+                    className={
+                      " flex   justify-center items-center cursor-pointer"
+                    }
+                    style={{ backgroundColor: product.color }}
+                  ></Button>
+                </div>
               </div>
             </div>
           </div>

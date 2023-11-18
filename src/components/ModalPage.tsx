@@ -38,6 +38,7 @@ export default function ModalPage() {
         onValueChange={setModalPlacement}
       ></RadioGroup>
       <Modal
+       backdrop="blur"
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         scrollBehavior="outside"

@@ -7,12 +7,11 @@ import { Search, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addItemToCartAction } from "@/store/slices/cart/cartSlice";
-interface carCardProps {
+interface IProductCardProps {
   car: IProduct;
   idx: number;
 }
-const CarCard = ({ car, idx }: carCardProps) => {
+const CarCard = ({ car, idx }: IProductCardProps) => {
   const dispatch = useDispatch();
   const { name, price, src, subSrc } = car;
   // const dispatch = useAppDispatch();
@@ -50,7 +49,7 @@ const CarCard = ({ car, idx }: carCardProps) => {
               as={Link}
               href={`/products/${idx + 1} `}
               className="absolute -bottom-4 z-50 -right-[0.52rem] h-16 w-16 rounded-tr-none  cursor-pointer   flex justify-center items-center  hover:bg-white bg-white font-light mx-2"
-              onClick={() => dispatch(addItemToCartAction(car))}
+              onClick={() => console.log('clicked')}
             >
               <ShoppingCart fill="black" />
             </Button>

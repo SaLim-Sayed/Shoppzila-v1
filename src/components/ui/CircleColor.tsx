@@ -5,21 +5,23 @@ import { useState } from "react";
 import clsx from "clsx";
 import { SignalHigh } from "lucide-react";
 
-interface IProps {}
-
-const CircleColor = ({}: IProps) => {
-  const [tempColor, setTempColor] = useState<string[]>([]);
-  const [selectedColor, setSelectedColor] = useState(1);
-
+ 
+const CircleColor = ({tempColor, setTempColor,selectedColor, setSelectedColor}: any) => {
+  
   return (
     <div>
-      <h1> Color :{tempColor} </h1>
+      <h1> Color :{
+      tempColor==="#F31260"?"Red":
+      tempColor==="#18C964"?"Green":
+      tempColor==="#58646D"?"Gray":
+      tempColor==="#FFA458"?"Orange":""
+      } </h1>
       <div className=" flex  items-center  gap-2">
         {colorList.map((color, index) => (
           <span
             key={color}
             className={clsx(
-              " flex rounded-full justify-center items-center bg-slate-600 cursor-pointer",
+              " flex rounded-full justify-center items-center bg-slate-600 text-white   cursor-pointer",
               {
                 "h-8 w-8": selectedColor === index,
                 "h-6 w-6": selectedColor !== index,
@@ -27,13 +29,11 @@ const CircleColor = ({}: IProps) => {
             )}
             style={{ backgroundColor: color }}
             onClick={() => {
-              setTempColor([color]);
+              setTempColor(color);
               setSelectedColor(index);
             }}
           >
-            {
-              selectedColor === index? " ✔":""
-            }
+            {selectedColor === index ? " ✔" : ""}
           </span>
         ))}
       </div>

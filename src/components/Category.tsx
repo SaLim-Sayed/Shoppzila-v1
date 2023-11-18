@@ -26,9 +26,9 @@ const CategoryPage = ({ category }: IProps) => {
       <motion.div
         className="flex flex-col justify-center space-y-2"
         key={currentIndex}
-        initial={{ opacity: 0, x: -50 }}
+        initial={{ opacity: 0.5, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1 }}
       >
         <div className=" cursor-pointer  shrink-0 w-[137px] h-[137px] overflow-hidden">
           <Image

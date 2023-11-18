@@ -1,4 +1,4 @@
-import CarCard from "@/components/CarCard";
+import CarCard from "@/components/ProductsCard";
 import { CarProps, IProduct } from "@/interfaces";
 import fetchData from "@/utils";
 
