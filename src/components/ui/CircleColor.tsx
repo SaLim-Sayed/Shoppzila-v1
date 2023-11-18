@@ -1,7 +1,13 @@
 "use client";
 
 import { colorList } from "@/constants";
+<<<<<<< HEAD
 import clsx from "clsx";
+=======
+import { useState } from "react";
+import clsx from "clsx";
+import { SignalHigh } from "lucide-react";
+>>>>>>> origin/master
 
  
 const CircleColor = ({tempColor, setTempColor,selectedColor, setSelectedColor}: any) => {

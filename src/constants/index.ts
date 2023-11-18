@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { FooterColumn } from "@/interfaces";
 
 export const colorList = ["#F31260", "#18C964", "#58646D", "#FFA458"];
@@ -41,3 +42,6 @@ export const images = [
   { src: '/images/cards/10.jpg', alt: 'First' },
   
 ]
+=======
+export const colorList = ["#F31260", "#18C964", "#58646D", "#FFA458"];
+>>>>>>> origin/master

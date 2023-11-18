@@ -2,9 +2,15 @@
 import React, { ReactNode } from "react";
 
 import { ArrowRight, Facebook, Github, Instagram, Twitter } from "lucide-react";
+<<<<<<< HEAD
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/react";
 import { footerColumns } from "@/constants";
+=======
+import { footerColumns } from "@/utils";
+import { Button } from "@nextui-org/button";
+import { Image } from "@nextui-org/react";
+>>>>>>> origin/master
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -72,6 +78,10 @@ const Footer = () => {
               <input
                 type="text"
                 placeholder="Enter your email address"
+<<<<<<< HEAD
+=======
+                 
+>>>>>>> origin/master
                 onChange={(e) => e.target.value}
                 className=" rounded-md border-none text-black  outline-none   lg:pl-10 w-fit  py-2"
               />
