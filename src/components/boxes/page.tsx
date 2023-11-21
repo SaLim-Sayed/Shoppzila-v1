@@ -5,7 +5,7 @@ import fetchData from "@/utils";
 interface IProps {}
 
 const BoxPage = async ({}: IProps) => {
-  const url = "/api/boxes";
+  const url = "https://shoppzila.vercel.app/api/boxes";
   const boxes: IBox[] = await fetchData(url);
   return (
     <main className=" container mx-auto overflow-hidden">

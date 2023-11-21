@@ -6,7 +6,7 @@ import { useQuery, useQueryClient } from "react-query";
 import CategorySlider from "../CategorySlider";
 
 const Categories = () => {
-  const url = "/api/categories";
+  const url = "https://shoppzila.vercel.app/api/categories";
   const queryClient = useQueryClient();
   const { data, isLoading } = useQuery({
     queryKey: ["data"],
