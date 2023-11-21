@@ -59,7 +59,7 @@
 }
 
 .home__card-wrapper {
-  @apply grid 2xl:grid-cols-4 xl:grid-cols-4 md:grid-cols-3 grid-cols-1 w-full gap-y-4 gap-x-1;
+  @apply grid 2xl:grid-cols-4 xl:grid-cols-4 md:grid-cols-3 grid-cols-1 w-full gap-2;
 }
  
 
@@ -68,6 +68,20 @@
 }
 
  
- 
- 
+
 }
+.swiper-pagination-bullet-active {
+  background-color: #FFA458 !important;
+  width: 15px  !important;
+  height: 15px !important;
+}
+.swiper-pagination {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.swiper-pagination-bullet-active-next{
+  width: 2px  !important;
+  height: 2px !important;
+}
+ 
