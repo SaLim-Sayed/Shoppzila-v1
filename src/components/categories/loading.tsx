@@ -4,7 +4,7 @@ import { IProduct } from "@/interfaces";
 import fetchData from "@/utils";
 
 export default async function Loading() {
-  const url = "https://shoppzila.vercel.app/api/products";
+  const url = "/api/products";
 
   const allProducts: IProduct[] = await fetchData(url);
   return (

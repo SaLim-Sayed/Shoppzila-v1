@@ -6,7 +6,7 @@ import fetchData from "@/utils";
 interface IProps {}
 
 const Products = async ({}: IProps) => {
-  const url = "https://shoppzila.vercel.app/api/products";
+  const url = "/api/products";
   const allProducts: IProduct[] = await fetchData(url);
   return (
     <div>

@@ -4,7 +4,7 @@ import { IProduct } from "@/interfaces";
 import fetchData from "@/utils";
 
 export default async function App() {
-  const url = "https://shoppzila.vercel.app/api/boxes";
+  const url = "/api/boxes";
   const allProducts: IProduct[] = await fetchData(url);
   return (
     <main className=" container overflow-hidden">
