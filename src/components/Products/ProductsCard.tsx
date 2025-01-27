@@ -24,6 +24,8 @@ const ProductsCard = ({ product, idx }: IProductCardProps) => {
         onMouseOut={() => setIsHovered(false)}
         shadow="none"
         isPressable
+        as={Link}
+        href={`/products/${idx + 1} `}
         onPress={() => console.log("item pressed")}
       >
         <motion.div initial={{ opacity: 0.8 }} animate={{ opacity: 1 }}>
