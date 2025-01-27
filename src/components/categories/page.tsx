@@ -25,7 +25,7 @@ const Categories = () => {
         <div className=" flex py-6 gap-0 overflow-hidden">
           <Swiper
             modules={[Navigation, A11y, Autoplay]}
-            slidesPerView={5}
+            slidesPerView={2}
             spaceBetween={20}
             breakpoints={{
               640: { slidesPerView: 2 },
