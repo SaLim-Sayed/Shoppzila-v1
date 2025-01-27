@@ -43,7 +43,7 @@ const Categories = () => {
           >
             {category?.map((el, idx) => (
               <SwiperSlide key={idx}>
-                <div className="sm:h-[218px] h-[266px] overflow-hidden">
+                <div className="overflow-hidden">
                   <Image
                     src={el.src}
                     alt={el.title}
